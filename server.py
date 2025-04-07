@@ -10,9 +10,9 @@ logging.basicConfig(level=logging.INFO, format='[%(asctime)s] %(levelname)s: %(m
 
 # Default download directory relative to the script's location
 # You can change this to an absolute path if needed, e.g., "/var/videos"
-DEFAULT_DOWNLOAD_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "videos")
+DEFAULT_DOWNLOAD_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Videos" + os.sep + "yt-dlp")
 
-@app.route("/youtube-dl", methods=["POST"])
+@app.route("/video-dl", methods=["POST"])
 def download_video():
     """
     Endpoint to trigger a yt-dlp download.
@@ -44,14 +44,23 @@ def download_video():
     # - "--cookies-from-browser firefox" removed, as it requires browser-specific setup.
     # - You can add or remove format selectors as needed.
     # - Ensure "yt-dlp" is in PATH or replace with a full path (e.g. "/usr/local/bin/yt-dlp").
+    #command = [
+    #    "c:/PATH/TO/yt-dlp.exe",
+    #    "-S", "res,br",
+    #    "-f", "bv*[height<=1024]+ba/b[height<=1024]",
+    #    "--merge-output-format", "mp4",
+    #    "-o", f"{DEFAULT_DOWNLOAD_DIR}/%(title)s.%(ext)s",
+    #    video_url
+    #]
     command = [
-        "c:/PATH/TO/yt-dlp.exe",
+        "/usr/bin/yt-dlp",
         "-S", "res,br",
         "-f", "bv*[height<=1024]+ba/b[height<=1024]",
         "--merge-output-format", "mp4",
         "-o", f"{DEFAULT_DOWNLOAD_DIR}/%(title)s.%(ext)s",
         video_url
     ]
+
 
     app.logger.info("Starting download for URL: %s", video_url)
     try:
