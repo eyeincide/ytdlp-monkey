@@ -1,7 +1,7 @@
 
 # ytdlp-monkey
 
-**ytdlp-monkey** is a userscript for YouTube that provides a draggable "Download" button directly on the YouTube watch page. When clicked, it sends the current video's URL to a small local server running yt-dlp, allowing you to download the video in the format of your choice. This is an excellent solution for users migrating from browser add-ons like Video DownloadHelper who want more control, privacy, and flexibility.
+**ytdlp-monkey** is a userscript for video websites that provides a menu option. When clicked, it sends the current video's URL to a small local server running yt-dlp, allowing you to download the video in the format of your choice. This is an excellent solution for users migrating from browser add-ons like Video DownloadHelper who want more control, privacy, and flexibility.
 
 ## Why Migrate from Video DownloadHelper?
 
@@ -79,13 +79,12 @@ With the script installed, open a YouTube video page. You should see a red "Down
    ```
    Keep it running in the background.
 
-2. **Go to YouTube:** Navigate to a YouTube video page. The "Download Video" button should appear.
+2. **Go to a video site supported by yt-dlp extensions:** Navigate to any supported video page.
 
-3. **Download the Video:** Click the "Download Video" button without dragging it. The script will send the video URL (and cookies) to your local server, which will start yt-dlp. The video will begin downloading to the `videos` directory within the server's folder.
+3. **Download the Video:** Click the plugin icon, there will be an option under the script titled  "Download Video via yt-dlp". The script will send the video URL (and cookies) to your local server, which will start yt-dlp. The video will begin downloading to the `videos` directory within the server's folder.
 
 ## Troubleshooting
 
-- **No Button Appears:** Check that Tampermonkey is enabled and that the script is active.
 - **Server Not Running or Connection Error:** Ensure `server.py` is running and accessible at http://127.0.0.1:8080.
 - **yt-dlp Not Found:** Update `yt_dlp_path` in `server.py` to the correct path to yt-dlp or place yt-dlp in your PATH.
 - **Different Video Formats or Quality:** Modify the `command` array in `server.py` to specify different formats or quality levels. Refer to the yt-dlp documentation for more options.
