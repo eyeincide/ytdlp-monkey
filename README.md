@@ -15,18 +15,14 @@
   yt-dlp is command-line based and highly configurable. Integrate it into your workflows or automation scripts as you see fit.
 
 ## Requirements
-
-1. **A Modern Browser:**  
-   Use [Firefox](https://www.mozilla.org/firefox/new/) or [Chrome](https://www.google.com/chrome/) for the best compatibility with userscripts.
-   
-2. **Tampermonkey (or Similar Userscript Manager):**  
+1. **Tampermonkey (or Similar Userscript Manager):**  
    Install Tampermonkey to run custom JavaScript on websites.  
-   - Firefox: [Tampermonkey for Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/)  
-   - Chrome: [Tampermonkey for Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)  
+   - Firefox: you're on your own
+   - Chromium/Chrome/Brave: [Tampermonkey for Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)  
    
    Once installed, ensure Tampermonkey is enabled and running in your browser.
     
-3. **yt-dlp:**  
+2. **yt-dlp:**  
    yt-dlp is the tool that actually downloads videos.
    
    **Option A: Python-based (Recommended)**
@@ -42,7 +38,7 @@
 
    Make sure to update the server scriptâ€™s `command` array to point to `yt-dlp` or `yt-dlp.exe` if not in your PATH.
 
-4. **Flask (Local Server):**  
+3. **Flask (Local Server):**  
    The userscript communicates with yt-dlp through a small local Flask server.
    - Ensure Python is installed.
    - Install Flask:
