@@ -1,7 +1,7 @@
 
 # ytdlp-monkey
 
-**ytdlp-monkey** is a userscript for video websites that provides a menu option. When clicked, it sends the current video's URL to a small local server running yt-dlp, allowing you to download the video in the format of your choice. This is an excellent solution for users migrating from browser add-ons like Video DownloadHelper who want more control, privacy, and flexibility.
+**ytdlp-monkey** is a userscript for video websites that provides a menu option. When clicked, it sends the current video's URL and cookies to a small local flask server which dispatches to the locally installed yt-dlp, allowing you to download the video in the format of your choice. This is an excellent solution for users migrating from browser add-ons like Video DownloadHelper who want more control, privacy, and flexibility.
 
 ## Why Migrate from Video DownloadHelper?
 
